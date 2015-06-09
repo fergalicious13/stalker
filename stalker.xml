@@ -1,1 +1,70 @@
-<xml xmlns="http://www.w3.org/1999/xhtml"></xml>
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <block type="controls_whileUntil" id="26" inline="false" x="-24" y="36">
+    <field name="MODE">UNTIL</field>
+    <value name="NUMBER">
+      <block type="sensor_button" id="56">
+        <field name="OBJECT">ENTER</field>
+      </block>
+    </value>
+    <statement name="DO">
+      <block type="controls_if" id="63" inline="false">
+        <value name="IF0">
+          <block type="logic_operation" id="119" inline="true">
+            <field name="OP">LAND</field>
+            <value name="A">
+              <block type="logic_compare" id="77" inline="true">
+                <field name="OP">EQ</field>
+                <value name="A">
+                  <block type="sensor_object" id="126">
+                    <field name="OBJECT">LEFTFRONT</field>
+                  </block>
+                </value>
+                <value name="B">
+                  <block type="math_number" id="136">
+                    <field name="NUM">100</field>
+                  </block>
+                </value>
+              </block>
+            </value>
+            <value name="B">
+              <block type="logic_compare" id="137" inline="true">
+                <field name="OP">EQ</field>
+                <value name="A">
+                  <block type="sensor_object" id="138">
+                    <field name="OBJECT">RIGHTFRONT</field>
+                  </block>
+                </value>
+                <value name="B">
+                  <block type="math_number" id="139">
+                    <field name="NUM">100</field>
+                  </block>
+                </value>
+              </block>
+            </value>
+          </block>
+        </value>
+        <statement name="DO0">
+          <block type="movement_stop" id="149">
+            <next>
+              <block type="multimedia_playwav" id="214">
+                <field name="WAV">_SndTest</field>
+              </block>
+            </next>
+          </block>
+        </statement>
+        <next>
+          <block type="robot_delay" id="216" inline="true">
+            <value name="DELAY">
+              <block type="math_number" id="223">
+                <field name="NUM">250</field>
+              </block>
+            </value>
+          </block>
+        </next>
+      </block>
+    </statement>
+    <next>
+      <block type="movement_stop" id="239"></block>
+    </next>
+  </block>
+</xml>
