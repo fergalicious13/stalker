@@ -48,7 +48,7 @@
           <block type="movement_stop" id="149">
             <next>
               <block type="multimedia_playwav" id="214">
-                <field name="WAV">_siren</field>
+                <field name="WAV">_SndText</field>
               </block>
             </next>
           </block>
@@ -91,21 +91,26 @@
         <statement name="DO1">
           <block type="movement_stop" id="551">
             <next>
-              <block type="led_select" id="552" inline="true">
-                <field name="ACTION">FLASH</field>
-                <value name="LED">
-                  <block type="math_number" id="553">
-                    <field name="NUM">2</field>
-                  </block>
-                </value>
+              <block type="multimedia_playwav" id="571">
+                <field name="WAV">_siren</field>
                 <next>
-                  <block type="led_select" id="554" inline="true">
+                  <block type="led_select" id="552" inline="true">
                     <field name="ACTION">FLASH</field>
                     <value name="LED">
-                      <block type="math_number" id="555">
-                        <field name="NUM">3</field>
+                      <block type="math_number" id="553">
+                        <field name="NUM">2</field>
                       </block>
                     </value>
+                    <next>
+                      <block type="led_select" id="554" inline="true">
+                        <field name="ACTION">FLASH</field>
+                        <value name="LED">
+                          <block type="math_number" id="555">
+                            <field name="NUM">3</field>
+                          </block>
+                        </value>
+                      </block>
+                    </next>
                   </block>
                 </next>
               </block>
