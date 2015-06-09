@@ -8,7 +8,7 @@
     </value>
     <statement name="DO">
       <block type="controls_if" id="63" inline="false">
-        <mutation elseif="2" else="1"></mutation>
+        <mutation elseif="3"></mutation>
         <value name="IF0">
           <block type="logic_operation" id="119" inline="true">
             <field name="OP">LAND</field>
@@ -54,16 +54,31 @@
           </block>
         </statement>
         <value name="IF1">
-          <block type="logic_compare" id="244" inline="true">
+          <block type="logic_compare" id="364" inline="true">
             <field name="OP">LT</field>
             <value name="A">
-              <block type="sensor_object" id="245">
-                <field name="OBJECT">LEFTFRONT</field>
+              <block type="math_single" id="374" inline="true">
+                <field name="OP">ABS</field>
+                <value name="NUM">
+                  <block type="math_arithmetic" id="418" inline="true">
+                    <field name="OP">MINUS</field>
+                    <value name="A">
+                      <block type="sensor_object" id="473">
+                        <field name="OBJECT">LEFTFRONT</field>
+                      </block>
+                    </value>
+                    <value name="B">
+                      <block type="sensor_object" id="495">
+                        <field name="OBJECT">RIGHTFRONT</field>
+                      </block>
+                    </value>
+                  </block>
+                </value>
               </block>
             </value>
             <value name="B">
-              <block type="sensor_object" id="247">
-                <field name="OBJECT">RIGHTFRONT</field>
+              <block type="math_number" id="505">
+                <field name="NUM">10</field>
               </block>
             </value>
           </block>
@@ -111,7 +126,22 @@
             </next>
           </block>
         </statement>
-        <statement name="ELSE">
+        <value name="IF3">
+          <block type="logic_compare" id="244" inline="true">
+            <field name="OP">LT</field>
+            <value name="A">
+              <block type="sensor_object" id="245">
+                <field name="OBJECT">LEFTFRONT</field>
+              </block>
+            </value>
+            <value name="B">
+              <block type="sensor_object" id="247">
+                <field name="OBJECT">RIGHTFRONT</field>
+              </block>
+            </value>
+          </block>
+        </value>
+        <statement name="DO3">
           <block type="movement_forward" id="300">
             <next>
               <block type="led_select" id="325" inline="true">
