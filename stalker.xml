@@ -48,7 +48,7 @@
           <block type="movement_stop" id="149">
             <next>
               <block type="multimedia_playwav" id="214">
-                <field name="WAV">_SndTest</field>
+                <field name="WAV">_siren</field>
               </block>
             </next>
           </block>
